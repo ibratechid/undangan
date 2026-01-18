@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Wedding Invitation Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+    }
+    main {
+      padding: 20px;
+    }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .dashboard-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .dashboard-card h2 {
+      margin-top: 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wedding Invitation</div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="#" id="logout">Logout</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Dashboard</h1>
+    <div class="dashboard-grid">
+      <div class="dashboard-card">
+        <h2>Weddings</h2>
+        <p>Manage your wedding events.</p>
+        <button onclick="window.location.href='/wedding.html'">View Weddings</button>
+      </div>
+      <div class="dashboard-card">
+        <h2>Invitations</h2>
+        <p>Customize your invitations.</p>
+        <button onclick="window.location.href='/invitation.html'">View Invitations</button>
+      </div>
+      <div class="dashboard-card">
+        <h2>Guests</h2>
+        <p>Manage your guest list.</p>
+        <button onclick="window.location.href='/guest.html'">View Guests</button>
+      </div>
+      <div class="dashboard-card">
+        <h2>RSVPs</h2>
+        <p>View RSVP responses.</p>
+        <button onclick="window.location.href='/rsvp.html'">View RSVPs</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.getElementById('logout').addEventListener('click', () => {
+      localStorage.removeItem('token');
+      window.location.href = '/login.html';
+    });
+  </script>
+</body>
+</html>
